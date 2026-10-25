@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Friendly Care — Personalized In-Home Care | Santa Clara, CA</title>
+<meta name="description" content="My Friendly Care — personalized in-home care in Santa Clara, CA. Open 24 hours. Call (800) 849-0915.">
+<style>
+  :root{
+    --green:#2e5e4e; --green-dark:#22473b; --cream:#fdfcf9; --sand:#f3efe4;
+    --ink:#22312b; --muted:#5c6b63; --gold:#c9a227; --line:#e4e0d4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  h1,h2,h3{font-family:Georgia,'Times New Roman',serif;color:var(--green-dark);line-height:1.25}
+  a{color:var(--green)}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:10px 22px}
+  header.site img{height:48px}
+  header.site nav{margin-left:auto;display:flex;gap:20px;align-items:center;font-size:.95rem}
+  header.site nav a{text-decoration:none;color:var(--ink)}
+  .callbtn{background:var(--green);color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
+  .callbtn:hover{background:var(--green-dark)}
+  .hero{position:relative;background:var(--sand)}
+  .hero img{width:100%;height:52vh;min-height:340px;object-fit:cover;display:block}
+  .hero .overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,46,38,.72) 0%,rgba(24,46,38,.35) 55%,rgba(24,46,38,0) 100%);display:flex;align-items:center}
+  .hero .inner{max-width:1100px;margin:0 auto;padding:0 22px;width:100%}
+  .hero h1{color:#fff;font-size:2.5rem;margin:0 0 10px;max-width:560px}
+  .hero p{color:#f0ead8;font-size:1.2rem;margin:0 0 22px;max-width:520px}
+  .btn{display:inline-block;background:var(--gold);color:#22312b;font-weight:700;padding:13px 26px;border-radius:999px;text-decoration:none}
+  .btn:hover{filter:brightness(1.07)}
+  .trust{max-width:1100px;margin:-26px auto 0;position:relative;z-index:2;padding:0 22px}
+  .trust .row{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 24px rgba(34,49,43,.08);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:16px 10px;text-align:center}
+  .trust b{display:block;color:var(--green);font-size:.95rem}
+  .trust span{font-size:.82rem;color:var(--muted)}
+  section{max-width:1100px;margin:0 auto;padding:52px 22px 8px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+  .split img{width:100%;border-radius:14px;display:block}
+  blockquote{max-width:820px;margin:8px auto;text-align:center;font-family:Georgia,serif;font-size:1.45rem;color:var(--green-dark);padding:34px 22px}
+  blockquote footer{margin-top:10px;font-size:1rem;color:var(--muted)}
+  .formwrap{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:52px}
+  .formwrap section{padding-top:40px;padding-bottom:48px}
+  form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;max-width:640px;margin:18px auto 0}
+  label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 6px}
+  label .req{color:#b03a2e}
+  input[type=text],input[type=tel],input[type=email],textarea{width:100%;padding:11px 12px;border:1px solid #cfd4cc;border-radius:9px;font:inherit;background:#fff}
+  textarea{min-height:110px;resize:vertical}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:.82rem;color:var(--muted);font-weight:400}
+  .consent input{margin-top:3px}
+  button[type=submit]{margin-top:20px;width:100%;background:var(--green);color:#fff;border:0;border-radius:999px;padding:14px;font:inherit;font-weight:700;cursor:pointer}
+  button[type=submit]:hover{background:var(--green-dark)}
+  button[type=submit]:disabled{opacity:.6;cursor:wait}
+  .formnote{text-align:center;color:var(--muted);font-size:.9rem}
+  .success{display:none;background:#eef6f1;border:1px solid #bcd8c7;color:var(--green-dark);border-radius:12px;padding:20px;text-align:center;max-width:640px;margin:18px auto 0}
+  .error{display:none;background:#fbeeec;border:1px solid #e5c0ba;color:#7c2d22;border-radius:12px;padding:16px;text-align:center;max-width:640px;margin:14px auto 0;font-size:.92rem}
+  footer.site{background:var(--green-dark);color:#e9e4d2;margin-top:0;padding:44px 22px 30px}
+  footer.site .cols{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  footer.site h3{color:#fff;font-size:1rem;margin:0 0 8px}
+  footer.site p{margin:4px 0;font-size:.92rem}
+  footer.site a{color:#e9e4d2}
+  footer.site .fine{max-width:1100px;margin:26px auto 0;border-top:1px solid rgba(255,255,255,.18);padding-top:16px;font-size:.82rem;color:#c8c2ab;display:flex;flex-wrap:wrap;gap:8px 22px}
+  @media (max-width:760px){
+    .hero h1{font-size:1.9rem}
+    .trust .row{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr}
+    footer.site .cols{grid-template-columns:1fr}
+    header.site nav a:not(.callbtn){display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="index.html"><img src="assets/logo.png" alt="My Friendly Care"></a>
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#request">Contact Us</a>
+    <a class="callbtn" href="tel:+18008490915">Call (800) 849-0915</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <img src="assets/care-1.jpg" alt="A caregiver warmly supporting a senior at home">
+  <div class="overlay"><div class="inner">
+    <h1>Personalized In-Home Care</h1>
+    <p>Don&rsquo;t settle for just care, when you can have Friendly Care.</p>
+    <a class="btn" href="#request">Request a Service Now</a>
+  </div></div>
+</div>
+
+<div class="trust"><div class="row">
+  <div><b>Since 2010</b><span>Proudly serving our community</span></div>
+  <div><b>Open 24 Hours</b><span>Monday to Sunday</span></div>
+  <div><b>Licensed</b><span>HCO# 434700171</span></div>
+  <div><b>Santa Clara, CA</b><span>2100 Walsh Avenue STE B1</span></div>
+</div></div>
+
+<section id="about">
+  <div class="split">
+    <div>
+      <h2>Choose Your Care With Confidence.</h2>
+      <p><strong>Because every helping hand should feel like family.</strong></p>
+      <h3>Welcome to My Friendly Care!</h3>
+      <p>We know that facing the challenges and questions around aging can feel overwhelming. That&rsquo;s why we don&rsquo;t just answer your questions &mdash; we work closely with you to find personalized solutions that fit your unique situation. Our mission is to support you every step of the way with caring guidance, helpful resources, and compassionate care to help you live your best life.</p>
+      <p>You can genuinely say, &ldquo;A friend has helped me.&rdquo;</p>
+      <p>We build real connections and offer heartfelt support, so you always feel cared for and understood. Here, you&rsquo;re never alone on your journey; consider us your trusted friend helping you find the best path forward.</p>
+    </div>
+    <img src="assets/care-2.jpg" alt="A friendly caregiver spending time with a client">
+  </div>
+</section>
+
+<blockquote>
+  &ldquo;Aging is not lost youth but a new stage of opportunity and strength.&rdquo;
+  <footer>&mdash; Betty Friedan</footer>
+</blockquote>
+
+<section>
+  <div class="split">
+    <img src="assets/care-3.jpg" alt="Compassionate in-home care">
+    <div>
+      <h2>Just like a friend. We are a phone call away.</h2>
+      <p>Speak to the experts &mdash; call us at <a href="tel:+18008490915"><strong>(800) 849-0915</strong></a>. We are open Monday to Sunday, 24 hours.</p>
+      <p>Visit us at 2100 Walsh Avenue STE B1, Santa Clara, CA 95050.</p>
+      <a class="btn" href="#request">Schedule a Call Today!</a>
+    </div>
+  </div>
+</section>
+
+<div class="formwrap" id="request">
+  <section>
+    <h2 style="text-align:center">Schedule a Call Today!</h2>
+    <p class="formnote">We are here to answer and questions you have. Send an inquiry and it lands directly in our inbox at jcruz@myfriendlycare.com.</p>
+
+    <form id="inquiryForm" novalidate>
+      <label for="f-name">Full Name <span class="req">(required)</span></label>
+      <input type="text" id="f-name" name="name" required autocomplete="name">
+
+      <label for="f-phone">Phone <span class="req">(required)</span></label>
+      <input type="tel" id="f-phone" name="phone" required autocomplete="tel">
+
+      <label for="f-email">Email <span class="req">(required)</span></label>
+      <input type="email" id="f-email" name="email" required autocomplete="email">
+
+      <label for="f-message">Message</label>
+      <textarea id="f-message" name="message"></textarea>
+
+      <label class="consent">
+        <input type="checkbox" id="f-consent" name="sms_consent">
+        <span>By checking this box and providing your phone number, you consent to receive recurring SMS messages from Friendly Care regarding job opportunities, service updates, scheduling, and customer support. Message frequency may vary. Standard message and data rates may apply. You can opt out at any time by replying STOP or get help by replying HELP.</span>
+      </label>
+      <p style="font-size:.82rem;color:var(--muted)">Please see our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a>.</p>
+
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <div class="success" id="formSuccess">Thank you for your response. &#10024; We&rsquo;ll be in touch shortly.</div>
+    <div class="error" id="formError">Something went wrong sending your inquiry. Please call us at <a href="tel:+18008490915">(800) 849-0915</a> and we&rsquo;ll help you right away.</div>
+  </section>
+</div>
+
+<footer class="site">
+  <div class="cols">
+    <div>
+      <h3>Call us</h3>
+      <p>Speak to the experts</p>
+      <p><a href="tel:+18008490915">(800) 849-0915</a></p>
+    </div>
+    <div>
+      <h3>Opening hours</h3>
+      <p>Monday To Sunday</p>
+      <p>24 Hours</p>
+    </div>
+    <div>
+      <h3>Address</h3>
+      <p>2100 Walsh Avenue STE B1</p>
+      <p>Santa Clara, CA 95050, United States</p>
+    </div>
+  </div>
+  <div class="fine">
+    <span>Proudly Serving Our Community Since 2010</span>
+    <span>HCO# 434700171</span>
+    <a href="terms.html">Terms and Condition</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var form = document.getElementById('inquiryForm');
+    var btn = document.getElementById('submitBtn');
+    var ok = document.getElementById('formSuccess');
+    var err = document.getElementById('formError');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      err.style.display = 'none';
+      var name = document.getElementById('f-name').value.trim();
+      var phone = document.getElementById('f-phone').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+      if(!name || !phone || !email){
+        err.textContent = 'Please fill in your name, phone, and email so we can reach you.';
+        err.style.display = 'block';
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fetch('https://formsubmit.co/ajax/jcruz@myfriendlycare.com', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          message: document.getElementById('f-message').value.trim(),
+          sms_consent: document.getElementById('f-consent').checked ? 'Yes' : 'No',
+          _subject: 'Website inquiry — My Friendly Care'
+        })
+      }).then(function(r){
+        if(!r.ok) throw new Error('send failed');
+        form.style.display = 'none';
+        ok.style.display = 'block';
+      }).catch(function(){
+        err.innerHTML = 'Something went wrong sending your inquiry. Please call us at <a href="tel:+18008490915">(800) 849-0915</a> and we&rsquo;ll help you right away.';
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Submit';
+      });
+    });
+  })();
+</script>
+</body>
+</html>
