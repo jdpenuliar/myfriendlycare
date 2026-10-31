@@ -202,7 +202,7 @@
       }
       btn.disabled = true;
       btn.textContent = 'Sending…';
-      fetch('https://formsubmit.co/ajax/jcruz@myfriendlycare.com', {
+      fetch('https://formsubmit.co/ajax/info@myfriendlycare.com', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         body: JSON.stringify({
@@ -211,7 +211,8 @@
           email: email,
           message: document.getElementById('f-message').value.trim(),
           sms_consent: document.getElementById('f-consent').checked ? 'Yes' : 'No',
-          _subject: 'Website inquiry — My Friendly Care'
+          _subject: 'Website inquiry — My Friendly Care',
+          _cc: 'jcruz@myfriendlycare.com'
         })
       }).then(function(r){
         if(!r.ok) throw new Error('send failed');
