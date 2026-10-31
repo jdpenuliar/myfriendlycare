@@ -143,10 +143,6 @@
       <label for="f-message">Message</label>
       <textarea id="f-message" name="message"></textarea>
 
-      <label class="consent">
-        <input type="checkbox" id="f-consent" name="sms_consent">
-        <span>By checking this box and providing your phone number, you consent to receive recurring SMS messages from Friendly Care regarding job opportunities, service updates, scheduling, and customer support. Message frequency may vary. Standard message and data rates may apply. You can opt out at any time by replying STOP or get help by replying HELP.</span>
-      </label>
       <p style="font-size:.82rem;color:var(--muted)">Please see our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a>.</p>
 
       <button type="submit" id="submitBtn">Submit</button>
@@ -210,7 +206,6 @@
           phone: phone,
           email: email,
           message: document.getElementById('f-message').value.trim(),
-          sms_consent: document.getElementById('f-consent').checked ? 'Yes' : 'No',
           _subject: 'Website inquiry — My Friendly Care'
         })
       }).then(function(r){
