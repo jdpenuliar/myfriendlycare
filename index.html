@@ -216,7 +216,7 @@
           message: document.getElementById('f-message').value.trim(),
           sms_consent: document.getElementById('f-consent').checked ? 'Yes' : 'No',
           _subject: 'Website inquiry — My Friendly Care',
-          _cc: 'cruz.jehu@gmail.com, jcruz@myfriendlycare.com'
+          _cc: 'jcruz@myfriendlycare.com'
         })
       }).then(function(r){
         if(!r.ok) throw new Error('send failed');
